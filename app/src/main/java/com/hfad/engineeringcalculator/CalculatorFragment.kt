@@ -23,15 +23,8 @@ class CalculatorFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[CalculatorViewModel::class.java]
 
-        viewModel.outputStr.observe(viewLifecycleOwner) { newValue ->
-            binding.textView.text = newValue
-        }
-
-        viewModel.result.observe(viewLifecycleOwner) { newValue ->
-            binding.textView2.text = newValue
-        }
-
         binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
         return view
     }
