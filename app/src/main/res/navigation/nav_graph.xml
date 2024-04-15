@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/calculatorFragment">
 
@@ -8,4 +9,19 @@
         android:id="@+id/calculatorFragment"
         android:name="com.hfad.engineeringcalculator.CalculatorFragment"
         android:label="CalculatorFragment" />
+    <fragment
+        android:id="@+id/equationsFragment"
+        android:name="com.hfad.engineeringcalculator.EquationsFragment"
+        android:label="fragment_equations"
+        tools:layout="@layout/fragment_equations" />
+    <fragment
+        android:id="@+id/linearFragment"
+        android:name="com.hfad.engineeringcalculator.LinearFragment"
+        android:label="fragment_linear"
+        tools:layout="@layout/fragment_linear" />
+    <fragment
+        android:id="@+id/squareFragment"
+        android:name="com.hfad.engineeringcalculator.SquareFragment"
+        android:label="fragment_square"
+        tools:layout="@layout/fragment_square" />
 </navigation>

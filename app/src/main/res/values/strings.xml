@@ -22,4 +22,13 @@
     <string name="buttonsqrt">√</string>
     <string name="buttondevide"> / </string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="solve">Решить</string>
+    <string name="x_is">x =</string>
+    <string name="linear">Линейное</string>
+    <string name="square">Квадратное</string>
+    <string name="choose">Выберите тип уравнения:</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="equations">Уравнения</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
