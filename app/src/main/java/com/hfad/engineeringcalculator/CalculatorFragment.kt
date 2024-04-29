@@ -23,6 +23,10 @@ class CalculatorFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[CalculatorViewModel::class.java]
 
+        try {
+            viewModel.addAll(CalculatorFragmentArgs.fromBundle(requireArguments()).number.toString())
+        } catch (_: Exception) {}
+
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 

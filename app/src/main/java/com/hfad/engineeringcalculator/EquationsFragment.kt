@@ -65,6 +65,44 @@ class EquationsFragment : Fragment() {
         viewModel.x.observe(viewLifecycleOwner) { newValue ->
             binding.xEquals.text = newValue.toString()
         }
+        viewModel.roots.observe(viewLifecycleOwner) { newValue ->
+            when (newValue) {
+                2 -> {
+                    binding.paste0.visibility = View.GONE
+                    binding.paste1.visibility = View.VISIBLE
+                    binding.paste2.visibility = View.VISIBLE
+                }
+                1 -> {
+                    binding.paste0.visibility = View.VISIBLE
+                    binding.paste1.visibility = View.GONE
+                    binding.paste2.visibility = View.GONE
+                }
+                else -> {
+                    binding.paste0.visibility = View.GONE
+                    binding.paste1.visibility = View.GONE
+                    binding.paste2.visibility = View.GONE
+                }
+            }
+        }
+
+        binding.paste0.setOnClickListener {
+            val action = EquationsFragmentDirections.actionEquationsFragmentToCalculatorFragment(
+                viewModel.x0.toFloat()
+            )
+            view.findNavController().navigate(action)
+        }
+        binding.paste1.setOnClickListener {
+            val action = EquationsFragmentDirections.actionEquationsFragmentToCalculatorFragment(
+                viewModel.x1.toFloat()
+            )
+            view.findNavController().navigate(action)
+        }
+        binding.paste2.setOnClickListener {
+            val action = EquationsFragmentDirections.actionEquationsFragmentToCalculatorFragment(
+                viewModel.x2.toFloat()
+            )
+            view.findNavController().navigate(action)
+        }
 
         return view
     }

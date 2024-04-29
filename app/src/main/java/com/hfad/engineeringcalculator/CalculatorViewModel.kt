@@ -17,7 +17,7 @@ class CalculatorViewModel: ViewModel(){
             if (str != null) {
                 var string: String = str
                 if ('√' in str) {
-                    for (i in 0..<(str.length-1)) {
+                    for (i in 0..<(str.length)) {
                         if (str[i] == '√') {
                             val str1st = string.substringBefore(str[i])
                             string = "SQRT(${string.substringAfter(str[i])}"
@@ -25,13 +25,14 @@ class CalculatorViewModel: ViewModel(){
                                 if (j >= string.length ||
                                     string[j] != '1' && string[j] != '2' && string[j] != '3' &&
                                     string[j] != '4' && string[j] != '5' && string[j] != '6' &&
-                                    string[j] != '7' && string[j] != '8' && string[j] != '9'
+                                    string[j] != '7' && string[j] != '8' && string[j] != '9' &&
+                                    string[j] != '0'
                                 ) {
                                     if (j >= string.length) {
                                         string = "$str1st$string)"
                                         break
                                     }
-                                    val strLast = string.substringAfter(string[j])
+                                    val strLast = string.substring(j)
                                     string = "${string.substringBefore(string[j])})"
                                     string = "$str1st$string$strLast"
                                     break

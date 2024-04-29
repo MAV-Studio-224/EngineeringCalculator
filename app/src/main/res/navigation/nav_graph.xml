@@ -8,20 +8,18 @@
     <fragment
         android:id="@+id/calculatorFragment"
         android:name="com.hfad.engineeringcalculator.CalculatorFragment"
-        android:label="CalculatorFragment" />
+        android:label="CalculatorFragment" >
+        <argument
+            android:name="number"
+            app:argType="float" />
+    </fragment>
     <fragment
         android:id="@+id/equationsFragment"
         android:name="com.hfad.engineeringcalculator.EquationsFragment"
         android:label="fragment_equations"
-        tools:layout="@layout/fragment_equations" />
-    <fragment
-        android:id="@+id/linearFragment"
-        android:name="com.hfad.engineeringcalculator.LinearFragment"
-        android:label="fragment_linear"
-        tools:layout="@layout/fragment_linear" />
-    <fragment
-        android:id="@+id/squareFragment"
-        android:name="com.hfad.engineeringcalculator.SquareFragment"
-        android:label="fragment_square"
-        tools:layout="@layout/fragment_square" />
+        tools:layout="@layout/fragment_equations" >
+        <action
+            android:id="@+id/action_equationsFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
 </navigation>

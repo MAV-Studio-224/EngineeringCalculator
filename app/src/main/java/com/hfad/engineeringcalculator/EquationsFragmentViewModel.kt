@@ -17,30 +17,42 @@ class EquationsFragmentViewModel: ViewModel() {
     var _c = MutableLiveData("")
     val c: LiveData<Double>
         get() = _c.map { try { it?.toDouble() ?: 0.0 } catch (e: Exception) { 0.0 } }
-    var _x = MutableLiveData("")
+    private var _x = MutableLiveData("")
     var type = ""
+    private var _roots = MutableLiveData(0)
+    val roots: LiveData<Int>
+        get() = _roots
+
+    var x0 = 0.0
+    var x1 = 0.0
+    var x2 = 0.0
 
     fun getX() {
         when (type) {
             "square" -> {
                 val d = (b.value?.pow(2) ?: 0.0) - 4 * (a.value ?: 0.0) * (c.value ?: 0.0)
-                _x.value = if (d > 0.0) {
-                    "x₁ = ${(((-1 * (b.value ?: 0.0) + sqrt(d)) / (2 * (a.value ?: 1.0))) * 1000).toInt() / 1000.0} \n" +
-                            "x₂ = ${(((-1 * (b.value ?: 0.0) - sqrt(d)) / (2 * (a.value ?: 1.0))) * 1000).toInt() / 1000.0}"
+                if (d > 0.0) {
+                    x1 = (((-1 * (b.value ?: 0.0) + sqrt(d)) / (2 * (a.value ?: 1.0))) * 1000).toInt() / 1000.0
+                    x2 = (((-1 * (b.value ?: 0.0) - sqrt(d)) / (2 * (a.value ?: 1.0))) * 1000).toInt() / 1000.0
+                    _x.value = "x₁ = $x1 \nx₂ = $x2"
                 } else if (d < 0.0) {
-                    "∅"
+                    _x.value = "∅"
                 } else {
-                    "x = ${(-1000 * (b.value?.pow(2) ?: 0.0) / (2 * (a.value ?: 1.0))).toInt() / 1000.0}"
+                    x0 = (-1000 * (b.value?.pow(2) ?: 0.0) / (2 * (a.value ?: 1.0))).toInt() / 1000.0
+                    _x.value = "x = $x0"
                 }
+                _roots.value = if (d > 0.0) {2} else if (d == 0.0) {1} else {0}
             }
             "linear" -> {
-                _x.value = if (b.value == 0.0 && c.value == 0.0) {
-                    "x∈(-∞;+∞)"
+                if (b.value == 0.0 && c.value == 0.0) {
+                    _x.value = "x∈(-∞;+∞)"
                 } else if (b.value == 0.0 && c.value != 0.0) {
-                    "∅"
+                    _x.value = "∅"
                 } else {
-                    "x = ${(((-1 * (c.value ?: 0.0) / (b.value ?: 1.0)) * 1000).toInt() / 1000.0)}"
+                    x0 = (((-1 * (c.value ?: 0.0) / (b.value ?: 1.0)) * 1000).toInt() / 1000.0)
+                    _x.value = "x = $x0"
                 }
+                _roots.value = if (b.value != 0.0) {1} else {0}
             }
             else -> _x.value = "ERROR"
         }

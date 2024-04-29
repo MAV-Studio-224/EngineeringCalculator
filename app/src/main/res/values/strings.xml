@@ -21,8 +21,6 @@
     <string name="buttonc">DELETE</string>
     <string name="buttonsqrt">√</string>
     <string name="buttondevide"> / </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="solve">Решить</string>
     <string name="x_is">x =</string>
     <string name="linear">Линейное</string>
@@ -36,5 +34,7 @@
     <string name="b">1</string>
     <string name="xSquarePlus">X² +</string>
     <string name="c">0</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="paste0">Вставить X в калькулятор</string>
+    <string name="paste1">Вставить X₁ в калькулятор</string>
+    <string name="paste2">Вставить X₂ в калькулятор</string>
 </resources>
