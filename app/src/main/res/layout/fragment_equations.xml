@@ -1,66 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    android:gravity="bottom|center_horizontal"
-    android:orientation="vertical"
-    android:padding="32dp"
     tools:context=".EquationsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:id="@+id/choose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/choose"
-        android:textSize="20sp" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.hfad.engineeringcalculator.EquationsFragmentViewModel" />
+    </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <!-- TODO: Update blank fragment layout -->
 
         <TextView
-            android:id="@+id/solvingLinear"
+            android:id="@+id/choose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/linear"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/choose"
             android:textSize="20sp" />
 
-        <Switch
-            android:id="@+id/switch1"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/solvingLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/linear"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/solvingSquare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/square"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:hint="@string/a"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:text="@={viewModel._a}"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/xSquarePlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xSquarePlus"
+                android:textSize="28sp" />
+
+            <EditText
+                android:id="@+id/b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:hint="@string/a"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:text="@={viewModel._b}"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/xPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xplus"
+                android:textSize="28sp" />
+
+            <EditText
+                android:id="@+id/c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:hint="@string/c"
+                android:inputType="number|numberDecimal|numberSigned"
+                android:text="@={viewModel._c}"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/is0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textSize="28sp" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/solvingSquare"
-            android:layout_width="wrap_content"
+            android:id="@+id/xEquals"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/square"
-            android:textSize="20sp" />
+            android:text="@string/x_is"
+            android:textSize="60sp" />
+
     </LinearLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.hfad.engineeringcalculator.LinearFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <TextView
-        android:id="@+id/xEquals"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/x_is"
-        android:textSize="60sp" />
-
-</LinearLayout>
+</layout>

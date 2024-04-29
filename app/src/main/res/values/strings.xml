@@ -30,5 +30,11 @@
     <string name="choose">Выберите тип уравнения:</string>
     <string name="calculator">Калькулятор</string>
     <string name="equations">Уравнения</string>
+    <string name="xplus">X + </string>
+    <string name="_0">= 0</string>
+    <string name="a">1</string>
+    <string name="b">1</string>
+    <string name="xSquarePlus">X² +</string>
+    <string name="c">0</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
