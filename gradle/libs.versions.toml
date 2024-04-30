@@ -14,6 +14,8 @@ roomVersion = "2.6.1"
 ksp = "1.9.22-1.0.17"
 navigation = "2.7.7"
 evalex = "3.2.0"
+legacySupportV4 = "1.0.0"
+fragmentKtx = "1.6.2"
 
 [libraries]
 com-ezylang-evalex = { group = "com.ezylang", name = "EvalEx", version.ref = "evalex" }
@@ -33,6 +35,8 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

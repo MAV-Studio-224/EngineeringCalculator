@@ -10,4 +10,8 @@
         android:id="@+id/equationsFragment"
         android:icon="@drawable/icon_equations"
         android:title="@string/equations" />
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="@string/history" />
 </menu>

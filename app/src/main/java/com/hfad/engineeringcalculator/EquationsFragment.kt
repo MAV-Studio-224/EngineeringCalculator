@@ -5,10 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.hfad.engineeringcalculator.databinding.FragmentEquationsBinding
@@ -20,11 +16,15 @@ class EquationsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentEquationsBinding.inflate(inflater, container, false)
         val view = binding.root
-        val viewModel = ViewModelProvider(this)[EquationsFragmentViewModel::class.java]
+
+        val application = requireNotNull(this.activity).application
+        val dao = ECDatabase.getInstance(application).ecDao
+        val factory = EquationsViewModelFactory(dao)
+        val viewModel = ViewModelProvider(this, factory)[EquationsFragmentViewModel::class.java]
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner

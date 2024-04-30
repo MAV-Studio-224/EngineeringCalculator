@@ -22,4 +22,9 @@
             android:id="@+id/action_equationsFragment_to_calculatorFragment"
             app:destination="@id/calculatorFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.hfad.engineeringcalculator.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>

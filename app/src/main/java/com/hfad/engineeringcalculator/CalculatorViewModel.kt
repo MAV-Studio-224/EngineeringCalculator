@@ -3,8 +3,11 @@ package com.hfad.engineeringcalculator
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
+import kotlin.math.round
 
-class CalculatorViewModel: ViewModel(){
+class CalculatorViewModel(val dao: ECDAO): ViewModel() {
     private var _outputStr = MutableLiveData("")
     val outputStr: LiveData<String>
         get() = _outputStr
@@ -46,7 +49,7 @@ class CalculatorViewModel: ViewModel(){
                 if (l.toInt().toDouble() == l) {
                     l.toInt()
                 } else {
-                    kotlin.math.round(l * 10000000) / 10000000
+                    round(l * 10000000) / 10000000
                 }
             } else throw Exception("ERROR")
         } catch (e: Exception) {
@@ -84,6 +87,11 @@ class CalculatorViewModel: ViewModel(){
     }
 
     fun result() {
+        viewModelScope.launch {
+            dao.insert(ECEntity(type = "Числовое выражение",
+                expression = (outputStr.value ?: "ERROR"),
+                answer = (result.value ?: "ERROR")))
+        }
         _outputStr.value = result.value
     }
 

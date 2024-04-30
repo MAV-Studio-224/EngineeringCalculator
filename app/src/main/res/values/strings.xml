@@ -37,4 +37,6 @@
     <string name="paste0">Вставить X в калькулятор</string>
     <string name="paste1">Вставить X₁ в калькулятор</string>
     <string name="paste2">Вставить X₂ в калькулятор</string>
+    <string name="history">История</string>
+    <string name="cleanHistory">Очистить историю</string>
 </resources>
