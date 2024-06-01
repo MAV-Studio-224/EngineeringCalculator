@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator with Equations</string>
+    <string name="solve">Solve</string>
+    <string name="linear">Linear</string>
+    <string name="square">Quadratic</string>
+    <string name="choose">"Choose the type of equation: "</string>
+    <string name="calculator">Calculator</string>
+    <string name="equations">Equations</string>
+    <string name="paste0">Insert X in the calculator</string>
+    <string name="paste1">Insert X₁ in the calculator</string>
+    <string name="paste2">Insert X₂ in the calculator</string>
+    <string name="history">History</string>
+    <string name="cleanHistory">Clean the history</string>
+    <string name="delAll">Delete all</string>
+    <string name="delete_one_description">Delete</string>
+    <string name="answer">Answer: %1$s</string>
+    <string name="solve_equation">Solve the equation</string>
+</resources>

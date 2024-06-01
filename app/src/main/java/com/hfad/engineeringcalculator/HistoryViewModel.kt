@@ -1,25 +1,29 @@
 package com.hfad.engineeringcalculator
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(private val dao:ECDAO) : ViewModel() {
-    private val allHistory = dao.getAll()
-    val string = allHistory.map {
-        var str = ""
-        for (i in it){
-            if (it.indexOf(i) == 0 || i.expression != it[it.indexOf(i) - 1].expression) {
-                str += "${i.type}\n${i.expression}\n${i.answer}\n\n\n"
-            }
+    var allHistory = dao.getAll()
+    var list = allHistory.value ?: listOf()
+
+    fun clearHistory() {
+        viewModelScope.launch {
+            dao.deleteAll(list)
         }
-        str
+        allHistory = dao.getAll()
+        list = listOf()
     }
 
-    fun clearHistory(){
+    fun deleteOneItem(item: ECEntity) {
         viewModelScope.launch {
-            dao.deleteAll(allHistory.value!!)
+            dao.delete(item)
+            allHistory = dao.getAll()
         }
     }
 }

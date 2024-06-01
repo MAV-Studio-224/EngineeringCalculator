@@ -47,7 +47,6 @@ class EquationsFragment : Fragment() {
                 binding.b.text.clear()
                 binding.c.text.clear()
                 binding.a.text.clear()
-                viewModel.getX()
             } else {
                 viewModel.type = "linear"
                 binding.a.visibility = View.GONE
@@ -55,13 +54,9 @@ class EquationsFragment : Fragment() {
                 binding.b.text.clear()
                 binding.c.text.clear()
                 binding.a.text.clear()
-                viewModel.getX()
             }
         }
 
-        viewModel.a.observe(viewLifecycleOwner) { viewModel.getX() }
-        viewModel.b.observe(viewLifecycleOwner) { viewModel.getX() }
-        viewModel.c.observe(viewLifecycleOwner) { viewModel.getX() }
         viewModel.x.observe(viewLifecycleOwner) { newValue ->
             binding.xEquals.text = newValue.toString()
         }

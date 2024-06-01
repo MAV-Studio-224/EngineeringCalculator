@@ -22,10 +22,20 @@ class HistoryFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         val dao = ECDatabase.getInstance(application).ecDao
         val factory = HistoryViewModelFactory(dao)
-        val viewModel = ViewModelProvider(this, factory).get(HistoryViewModel::class.java)
+        val viewModel = ViewModelProvider(this, factory)[HistoryViewModel::class.java]
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
+
+        val adapter = HistoryAdapter {item: ECEntity ->
+            viewModel.deleteOneItem(item)
+        }
+        binding.expressions.adapter = adapter
+
+        viewModel.allHistory.observe(viewLifecycleOwner) {
+            viewModel.list = it
+            adapter.submitList(it)
+        }
 
         return view
     }

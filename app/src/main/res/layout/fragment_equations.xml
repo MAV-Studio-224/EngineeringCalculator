@@ -19,8 +19,6 @@
         android:orientation="vertical"
         android:padding="16dp" >
 
-        <!-- TODO: Update blank fragment layout -->
-
         <TextView
             android:id="@+id/choose"
             android:layout_width="wrap_content"
@@ -114,6 +112,14 @@
                 android:text="@string/_0"
                 android:textSize="28sp" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/solve_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/solve_equation"
+            android:onClick="@{() -> viewModel.solve()}"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/xEquals"

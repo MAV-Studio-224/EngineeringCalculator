@@ -1,42 +1,47 @@
 <resources>
-    <string name="app_name">Engineering Calculator</string>
-    <string name="buttonenter">=</string>
-    <string name="buttonplus"> + </string>
-    <string name="button0">0</string>
-    <string name="buttondot">.</string>
-    <string name="button1">1</string>
-    <string name="button2">2</string>
-    <string name="button3">3</string>
-    <string name="button4">4</string>
-    <string name="button5">5</string>
-    <string name="button6">6</string>
-    <string name="buttonminus"> - </string>
-    <string name="button7">7</string>
-    <string name="button8">8</string>
-    <string name="button9">9</string>
-    <string name="buttonmultiplay"> * </string>
-    <string name="result" />
-    <string name="will_be_result"> </string>
-    <string name="buttonce">CE</string>
-    <string name="buttonc">DELETE</string>
-    <string name="buttonsqrt">√</string>
-    <string name="buttondevide"> / </string>
+    <string name="app_name">Калькулятор с уравнениями</string>
+    <string name="buttonenter" translatable="false">=</string>
+    <string name="buttonplus" translatable="false"> + </string>
+    <string name="button0" translatable="false">0</string>
+    <string name="buttondot" translatable="false">.</string>
+    <string name="button1" translatable="false">1</string>
+    <string name="button2" translatable="false">2</string>
+    <string name="button3" translatable="false">3</string>
+    <string name="button4" translatable="false">4</string>
+    <string name="button5" translatable="false">5</string>
+    <string name="button6" translatable="false">6</string>
+    <string name="buttonminus" translatable="false"> - </string>
+    <string name="button7" translatable="false">7</string>
+    <string name="button8" translatable="false">8</string>
+    <string name="button9" translatable="false">9</string>
+    <string name="buttonmultiplay" translatable="false"> * </string>
+    <string name="result" translatable="false" />
+    <string name="will_be_result" translatable="false"> </string>
+    <string name="buttonce" translatable="false">CE</string>
+    <string name="buttonc" translatable="false">DELETE</string>
+    <string name="buttonsqrt" translatable="false">√</string>
+    <string name="buttondevide" translatable="false"> / </string>
     <string name="solve">Решить</string>
-    <string name="x_is">x =</string>
+    <string name="x_is" translatable="false">x =</string>
     <string name="linear">Линейное</string>
     <string name="square">Квадратное</string>
     <string name="choose">Выберите тип уравнения:</string>
     <string name="calculator">Калькулятор</string>
     <string name="equations">Уравнения</string>
-    <string name="xplus">X + </string>
-    <string name="_0">= 0</string>
-    <string name="a">1</string>
-    <string name="b">1</string>
-    <string name="xSquarePlus">X² +</string>
-    <string name="c">0</string>
+    <string name="xplus" translatable="false">X + </string>
+    <string name="_0" translatable="false">= 0</string>
+    <string name="a" translatable="false">1</string>
+    <string name="b" translatable="false">1</string>
+    <string name="xSquarePlus" translatable="false">X² +</string>
+    <string name="c" translatable="false">0</string>
     <string name="paste0">Вставить X в калькулятор</string>
     <string name="paste1">Вставить X₁ в калькулятор</string>
     <string name="paste2">Вставить X₂ в калькулятор</string>
     <string name="history">История</string>
     <string name="cleanHistory">Очистить историю</string>
+    <string name="delAll">Удалить все</string>
+    <string name="delete_one" translatable="false">X</string>
+    <string name="delete_one_description">Удалить</string>
+    <string name="answer">Ответ: %1$s</string>
+    <string name="solve_equation">Решить уравнение</string>
 </resources>

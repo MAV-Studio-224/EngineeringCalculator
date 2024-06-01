@@ -75,6 +75,8 @@ class EquationsFragmentViewModel(val dao: ECDAO): ViewModel() {
         }
     }
 
+    fun solve() { getX() }
+
     val x: LiveData<String>
         get() = _x.map { it?.toString() ?: "" }
 }
